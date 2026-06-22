@@ -1,152 +1,257 @@
-<svg viewBox="0 0 1200 340" xmlns="http://www.w3.org/2000/svg" width="1200" height="340">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f0f1a"/>
-      <stop offset="50%" style="stop-color:#0d1b2a"/>
-      <stop offset="100%" style="stop-color:#0f0f1a"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00d4ff"/>
-      <stop offset="100%" style="stop-color:#7b2fff"/>
-    </linearGradient>
-    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#7b2fff"/>
-      <stop offset="100%" style="stop-color:#00d4ff"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glow2">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a2a3a" stroke-width="0.5"/>
-    </pattern>
-  </defs>
+<svg viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" width="1200" height="420">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#04040f"/>
+    <stop offset="100%" stop-color="#08061a"/>
+  </linearGradient>
+  <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#00e5ff"/>
+    <stop offset="48%" stop-color="#c060ff"/>
+    <stop offset="100%" stop-color="#00e5ff"/>
+  </linearGradient>
+  <linearGradient id="hline" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#00e5ff" stop-opacity="0"/>
+    <stop offset="25%" stop-color="#00e5ff" stop-opacity="0.9"/>
+    <stop offset="75%" stop-color="#c060ff" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#c060ff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="pipeGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#c060ff" stop-opacity="0.6"/>
+  </linearGradient>
+  <filter id="gBlue" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="gPurple" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="titleGlow" x="-5%" y="-60%" width="110%" height="220%">
+    <feGaussianBlur stdDeviation="10" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="ambientGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="40"/>
+  </filter>
+  <clipPath id="clip"><rect width="1200" height="420"/></clipPath>
+</defs>
 
-  <!-- Background -->
-  <rect width="1200" height="340" fill="url(#bg)"/>
-  <rect width="1200" height="340" fill="url(#grid)" opacity="0.4"/>
+<g clip-path="url(#clip)">
 
-  <!-- Ambient glow blobs -->
-  <ellipse cx="200" cy="170" rx="180" ry="120" fill="#7b2fff" opacity="0.07"/>
-  <ellipse cx="1000" cy="170" rx="180" ry="120" fill="#00d4ff" opacity="0.07"/>
+<!-- Background -->
+<rect width="1200" height="420" fill="url(#bg)"/>
 
-  <!-- Top accent line -->
-  <rect x="0" y="0" width="1200" height="3" fill="url(#accent)"/>
+<!-- Grid -->
+<g stroke="#00e5ff" stroke-width="0.4" opacity="0.055">
+  <line x1="0" y1="60" x2="1200" y2="60"/>
+  <line x1="0" y1="120" x2="1200" y2="120"/>
+  <line x1="0" y1="180" x2="1200" y2="180"/>
+  <line x1="0" y1="240" x2="1200" y2="240"/>
+  <line x1="0" y1="300" x2="1200" y2="300"/>
+  <line x1="0" y1="360" x2="1200" y2="360"/>
+  <line x1="60" y1="0" x2="60" y2="420"/>
+  <line x1="120" y1="0" x2="120" y2="420"/>
+  <line x1="180" y1="0" x2="180" y2="420"/>
+  <line x1="240" y1="0" x2="240" y2="420"/>
+  <line x1="960" y1="0" x2="960" y2="420"/>
+  <line x1="1020" y1="0" x2="1020" y2="420"/>
+  <line x1="1080" y1="0" x2="1080" y2="420"/>
+  <line x1="1140" y1="0" x2="1140" y2="420"/>
+</g>
 
-  <!-- Pipeline nodes — left side visual -->
-  <!-- Node: PDF -->
-  <rect x="52" y="100" width="80" height="44" rx="8" fill="#0d1b2a" stroke="#00d4ff" stroke-width="1.2" opacity="0.9"/>
-  <text x="92" y="118" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff" font-weight="bold">PDF</text>
-  <text x="92" y="133" text-anchor="middle" font-family="monospace" font-size="8" fill="#5aaabb">INGEST</text>
+<!-- Decorative circuit traces — LEFT only, stay out of center -->
+<g fill="none" opacity="0.22">
+  <polyline points="0,140 55,140 70,125 70,90" stroke="#00e5ff" stroke-width="1.2"/>
+  <polyline points="0,200 45,200 60,215 60,280 90,280" stroke="#00e5ff" stroke-width="1.1"/>
+  <polyline points="0,320 70,320 85,305 85,260 120,260" stroke="#b44fff" stroke-width="1.0"/>
+  <polyline points="120,0 120,55 105,70 105,110" stroke="#b44fff" stroke-width="1.0"/>
+  <polyline points="180,0 180,40 210,40 225,55 225,100" stroke="#00e5ff" stroke-width="0.8"/>
+  <polyline points="0,70 30,70 45,85 45,120" stroke="#b44fff" stroke-width="0.8"/>
+  <circle cx="70" cy="125" r="2.5" fill="#00e5ff"/>
+  <circle cx="60" cy="215" r="2.5" fill="#00e5ff"/>
+  <circle cx="85" cy="305" r="2.5" fill="#b44fff"/>
+  <circle cx="105" cy="70" r="2.5" fill="#b44fff"/>
+  <circle cx="45" cy="85" r="2" fill="#b44fff"/>
+</g>
 
-  <!-- Arrow -->
-  <line x1="132" y1="122" x2="152" y2="122" stroke="#00d4ff" stroke-width="1.2" marker-end="url(#arr)" opacity="0.6"/>
-  <polygon points="152,118 160,122 152,126" fill="#00d4ff" opacity="0.6"/>
+<!-- Decorative circuit traces — RIGHT only -->
+<g fill="none" opacity="0.22">
+  <polyline points="1200,140 1145,140 1130,125 1130,90" stroke="#00e5ff" stroke-width="1.2"/>
+  <polyline points="1200,200 1155,200 1140,215 1140,280 1110,280" stroke="#00e5ff" stroke-width="1.1"/>
+  <polyline points="1200,320 1130,320 1115,305 1115,260 1080,260" stroke="#b44fff" stroke-width="1.0"/>
+  <polyline points="1080,0 1080,55 1095,70 1095,110" stroke="#b44fff" stroke-width="1.0"/>
+  <polyline points="1020,0 1020,40 990,40 975,55 975,100" stroke="#00e5ff" stroke-width="0.8"/>
+  <polyline points="1200,70 1170,70 1155,85 1155,120" stroke="#b44fff" stroke-width="0.8"/>
+  <circle cx="1130" cy="125" r="2.5" fill="#00e5ff"/>
+  <circle cx="1140" cy="215" r="2.5" fill="#00e5ff"/>
+  <circle cx="1115" cy="305" r="2.5" fill="#b44fff"/>
+  <circle cx="1095" cy="70" r="2.5" fill="#b44fff"/>
+  <circle cx="1155" cy="85" r="2" fill="#b44fff"/>
+</g>
 
-  <!-- Node: BM25 -->
-  <rect x="160" y="90" width="72" height="28" rx="6" fill="#0d1b2a" stroke="#7b2fff" stroke-width="1.2" opacity="0.9"/>
-  <text x="196" y="109" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#a970ff">BM25</text>
+<!-- Ambient center glow (very subtle) -->
+<ellipse cx="600" cy="185" rx="260" ry="130" fill="#c060ff" opacity="0.035" filter="url(#ambientGlow)"/>
+<ellipse cx="600" cy="185" rx="180" ry="80" fill="#00e5ff" opacity="0.03" filter="url(#ambientGlow)"/>
 
-  <!-- Node: Vector -->
-  <rect x="160" y="126" width="72" height="28" rx="6" fill="#0d1b2a" stroke="#00d4ff" stroke-width="1.2" opacity="0.9"/>
-  <text x="196" y="145" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#00d4ff">VECTOR</text>
+<!-- Top border -->
+<rect x="0" y="0" width="1200" height="2.5" fill="url(#hline)"/>
+<!-- Bottom border -->
+<rect x="0" y="417" width="1200" height="2.5" fill="url(#hline)"/>
 
-  <!-- Arrow -->
-  <line x1="232" y1="104" x2="252" y2="118" stroke="#7b2fff" stroke-width="1" opacity="0.5"/>
-  <line x1="232" y1="140" x2="252" y2="126" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
-  <polygon points="248,115 258,120 250,126" fill="#5533aa" opacity="0.6"/>
+<!-- Corner brackets -->
+<polyline points="22,22 22,50 50,50" fill="none" stroke="#00e5ff" stroke-width="1.8" opacity="0.5"/>
+<polyline points="1178,22 1178,50 1150,50" fill="none" stroke="#00e5ff" stroke-width="1.8" opacity="0.5"/>
+<polyline points="22,398 22,370 50,370" fill="none" stroke="#c060ff" stroke-width="1.8" opacity="0.5"/>
+<polyline points="1178,398 1178,370 1150,370" fill="none" stroke="#c060ff" stroke-width="1.8" opacity="0.5"/>
 
-  <!-- Node: RRF -->
-  <rect x="258" y="104" width="66" height="36" rx="6" fill="#0d1b2a" stroke="#a970ff" stroke-width="1.5" filter="url(#glow)" opacity="0.95"/>
-  <text x="291" y="120" text-anchor="middle" font-family="monospace" font-size="8" fill="#a970ff" font-weight="bold">RRF</text>
-  <text x="291" y="133" text-anchor="middle" font-family="monospace" font-size="7" fill="#7755cc">FUSION</text>
+<!-- ═══════════════════════════════════════ -->
+<!--          TITLE BLOCK — CENTERED        -->
+<!-- ═══════════════════════════════════════ -->
 
-  <!-- Arrow -->
-  <polygon points="324,118 334,122 324,126" fill="#a970ff" opacity="0.7"/>
+<!-- Eyebrow label -->
+<text x="600" y="82" text-anchor="middle"
+  font-family="'Courier New', Courier, monospace"
+  font-size="11" fill="#2a4a5a" letter-spacing="9" font-weight="400">
+  PORTFOLIO PROJECT 04
+</text>
 
-  <!-- Node: Rerank -->
-  <rect x="334" y="104" width="72" height="36" rx="6" fill="#0d1b2a" stroke="#00d4ff" stroke-width="1.5" filter="url(#glow)" opacity="0.95"/>
-  <text x="370" y="120" text-anchor="middle" font-family="monospace" font-size="8" fill="#00d4ff" font-weight="bold">RERANK</text>
-  <text x="370" y="133" text-anchor="middle" font-family="monospace" font-size="7" fill="#5aaabb">CROSS-ENC</text>
+<!-- Thin top rule above title -->
+<line x1="440" y1="94" x2="760" y2="94" stroke="url(#hline)" stroke-width="0.8" opacity="0.5"/>
 
-  <!-- Arrow -->
-  <polygon points="406,118 416,122 406,126" fill="#00d4ff" opacity="0.7"/>
+<!-- Title glow layer (blurred clone) -->
+<text x="600" y="178" text-anchor="middle"
+  font-family="Arial Black, 'Arial Bold', sans-serif"
+  font-size="80" font-weight="900" letter-spacing="-2"
+  fill="#c060ff" opacity="0.12" filter="url(#ambientGlow)">
+  Enterprise RAG
+</text>
 
-  <!-- Node: LLM -->
-  <rect x="416" y="100" width="68" height="44" rx="8" fill="#0d1b2a" stroke="url(#accent)" stroke-width="2" filter="url(#glow2)" opacity="0.95"/>
-  <text x="450" y="118" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff" font-weight="bold">LLaMA</text>
-  <text x="450" y="131" text-anchor="middle" font-family="monospace" font-size="8" fill="#a970ff">3.1:8b</text>
-  <text x="450" y="142" text-anchor="middle" font-family="monospace" font-size="7" fill="#5aaabb">Ollama</text>
+<!-- Main title -->
+<text x="600" y="178" text-anchor="middle"
+  font-family="Arial Black, 'Arial Bold', sans-serif"
+  font-size="80" font-weight="900" letter-spacing="-2"
+  fill="url(#titleGrad)" filter="url(#titleGlow)">
+  Enterprise RAG
+</text>
 
-  <!-- Bottom label -->
-  <text x="52" y="185" font-family="monospace" font-size="7.5" fill="#334455" letter-spacing="2">RETRIEVAL PIPELINE</text>
+<!-- Divider below title — well separated -->
+<line x1="320" y1="200" x2="880" y2="200" stroke="url(#hline)" stroke-width="1.8"/>
 
-  <!-- Main title area -->
-  <text x="600" y="108" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4a6a8a" letter-spacing="6" font-weight="400">PORTFOLIO PROJECT 4</text>
+<!-- Subtitle — clear gap below divider -->
+<text x="600" y="228" text-anchor="middle"
+  font-family="'Courier New', Courier, monospace"
+  font-size="13.5" fill="#5a8a9f" letter-spacing="3.5">
+  HYBRID SEARCH  ·  RERANKING  ·  LOCAL LLMs  ·  FastAPI
+</text>
 
-  <!-- Main title -->
-  <text x="600" y="170" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="46" font-weight="700" fill="white" letter-spacing="-1">Enterprise RAG</text>
+<!-- ═══════════════════════════════════════ -->
+<!--       PIPELINE ROW — own section       -->
+<!-- ═══════════════════════════════════════ -->
 
-  <!-- Gradient underline -->
-  <rect x="360" y="180" width="480" height="3" rx="2" fill="url(#accent)"/>
+<!-- Pipeline label -->
+<text x="600" y="264" text-anchor="middle"
+  font-family="'Courier New', Courier, monospace"
+  font-size="8.5" fill="#1e3040" letter-spacing="5">
+  RETRIEVAL PIPELINE
+</text>
 
-  <!-- Subtitle -->
-  <text x="600" y="218" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#8aabcc" letter-spacing="1">Hybrid Search · Reranking · Local LLMs · FastAPI</text>
+<!-- Pipeline connector line (full span behind nodes) -->
+<line x1="284" y1="300" x2="916" y2="300" stroke="url(#pipeGrad)" stroke-width="1" opacity="0.35"/>
 
-  <!-- Tech badges row -->
-  <rect x="360" y="240" width="74" height="22" rx="11" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.8"/>
-  <text x="397" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff">ChromaDB</text>
+<!-- NODE 1: PDF -->
+<g filter="url(#gBlue)">
+  <rect x="284" y="280" width="90" height="40" rx="5" fill="#03080f" stroke="#00e5ff" stroke-width="1.5"/>
+  <text x="329" y="296" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#00e5ff" font-weight="bold" letter-spacing="2">PDF</text>
+  <text x="329" y="312" text-anchor="middle" font-family="'Courier New', monospace" font-size="7.5" fill="#005566" letter-spacing="1.5">INGEST</text>
+</g>
 
-  <rect x="444" y="240" width="58" height="22" rx="11" fill="#7b2fff" opacity="0.12" stroke="#7b2fff" stroke-width="0.8"/>
-  <text x="473" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#a970ff">BM25</text>
+<!-- Arrow 1→2 -->
+<line x1="374" y1="300" x2="402" y2="300" stroke="#00e5ff" stroke-width="1" opacity="0.5"/>
+<polygon points="400,296 408,300 400,304" fill="#00e5ff" opacity="0.5"/>
 
-  <rect x="512" y="240" width="76" height="22" rx="11" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.8"/>
-  <text x="550" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff">LangChain</text>
+<!-- NODE 2: VECTOR -->
+<g filter="url(#gBlue)">
+  <rect x="408" y="280" width="90" height="40" rx="5" fill="#03080f" stroke="#00e5ff" stroke-width="1.4"/>
+  <text x="453" y="296" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#00e5ff" font-weight="bold" letter-spacing="1">VECTOR</text>
+  <text x="453" y="312" text-anchor="middle" font-family="'Courier New', monospace" font-size="7.5" fill="#005566" letter-spacing="1">SEARCH</text>
+</g>
 
-  <rect x="598" y="240" width="58" height="22" rx="11" fill="#7b2fff" opacity="0.12" stroke="#7b2fff" stroke-width="0.8"/>
-  <text x="627" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#a970ff">Ollama</text>
+<!-- Arrow 2→3 (split merge) -->
+<line x1="498" y1="300" x2="526" y2="300" stroke="#6699aa" stroke-width="1" opacity="0.5"/>
+<polygon points="524,296 532,300 524,304" fill="#6699aa" opacity="0.5"/>
 
-  <rect x="666" y="240" width="62" height="22" rx="11" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.8"/>
-  <text x="697" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff">FastAPI</text>
+<!-- NODE 3: BM25 -->
+<g filter="url(#gPurple)">
+  <rect x="532" y="280" width="90" height="40" rx="5" fill="#060310" stroke="#c060ff" stroke-width="1.4"/>
+  <text x="577" y="296" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#c060ff" font-weight="bold" letter-spacing="2">BM25</text>
+  <text x="577" y="312" text-anchor="middle" font-family="'Courier New', monospace" font-size="7.5" fill="#551166" letter-spacing="1">KEYWORD</text>
+</g>
 
-  <rect x="738" y="240" width="102" height="22" rx="11" fill="#7b2fff" opacity="0.12" stroke="#7b2fff" stroke-width="0.8"/>
-  <text x="789" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#a970ff">sentence-transformers</text>
+<!-- Arrow 3→4 -->
+<line x1="622" y1="300" x2="650" y2="300" stroke="#9944cc" stroke-width="1" opacity="0.5"/>
+<polygon points="648,296 656,300 648,304" fill="#9944cc" opacity="0.5"/>
 
-  <!-- Right side: API mock -->
-  <rect x="870" y="82" width="268" height="176" rx="10" fill="#080f18" stroke="#1a2a3a" stroke-width="1.5" opacity="0.9"/>
-  <rect x="870" y="82" width="268" height="26" rx="10" fill="#0d1b2a"/>
-  <rect x="870" y="96" width="268" height="12" fill="#0d1b2a"/>
-  <circle cx="886" cy="95" r="5" fill="#ff5f57"/>
-  <circle cx="900" cy="95" r="5" fill="#febc2e"/>
-  <circle cx="914" cy="95" r="5" fill="#28c840"/>
-  <text x="1004" y="99" text-anchor="middle" font-family="monospace" font-size="8" fill="#445566">enterprise-rag API</text>
+<!-- NODE 4: RRF -->
+<g filter="url(#gPurple)">
+  <rect x="656" y="280" width="90" height="40" rx="5" fill="#060310" stroke="#c060ff" stroke-width="1.8"/>
+  <text x="701" y="296" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#c060ff" font-weight="bold" letter-spacing="2">RRF</text>
+  <text x="701" y="312" text-anchor="middle" font-family="'Courier New', monospace" font-size="7.5" fill="#551166" letter-spacing="1">FUSION</text>
+</g>
 
-  <text x="886" y="128" font-family="monospace" font-size="8.5" fill="#4a9a6a">POST</text>
-  <text x="916" y="128" font-family="monospace" font-size="8.5" fill="#ccd6e0">/query</text>
+<!-- Arrow 4→5 -->
+<line x1="746" y1="300" x2="774" y2="300" stroke="#c060ff" stroke-width="1" opacity="0.5"/>
+<polygon points="772,296 780,300 772,304" fill="#c060ff" opacity="0.5"/>
 
-  <text x="886" y="148" font-family="monospace" font-size="7.5" fill="#445566">{</text>
-  <text x="894" y="162" font-family="monospace" font-size="7.5" fill="#7b2fff">"question"</text>
-  <text x="946" y="162" font-family="monospace" font-size="7.5" fill="#ccd6e0">:</text>
-  <text x="954" y="162" font-family="monospace" font-size="7.5" fill="#4a9a6a">"What is FortiGate?"</text>
-  <text x="886" y="176" font-family="monospace" font-size="7.5" fill="#445566">}</text>
+<!-- NODE 5: LLM -->
+<g filter="url(#gBlue)">
+  <rect x="780" y="275" width="90" height="50" rx="5" fill="#001520" stroke="#00e5ff" stroke-width="2"/>
+  <text x="825" y="295" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#00e5ff" font-weight="bold" letter-spacing="1">LLaMA</text>
+  <text x="825" y="309" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#00e5ff" opacity="0.7">3.1 : 8b</text>
+  <text x="825" y="320" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#004455" letter-spacing="1">Ollama</text>
+</g>
 
-  <rect x="880" y="184" width="248" height="1" fill="#1a2a3a"/>
+<!-- Arrow 5→output -->
+<line x1="870" y1="300" x2="896" y2="300" stroke="#00e5ff" stroke-width="1" opacity="0.5"/>
+<polygon points="894,296 902,300 894,304" fill="#00e5ff" opacity="0.5"/>
 
-  <text x="886" y="200" font-family="monospace" font-size="7.5" fill="#445566">200 OK</text>
-  <text x="886" y="214" font-family="monospace" font-size="7.5" fill="#7b2fff">"answer"</text>
-  <text x="930" y="214" font-family="monospace" font-size="7.5" fill="#ccd6e0">: </text>
-  <text x="940" y="214" font-family="monospace" font-size="7.5" fill="#4a9a6a">"FortiGate is a..."</text>
-  <text x="886" y="228" font-family="monospace" font-size="7.5" fill="#7b2fff">"sources"</text>
-  <text x="930" y="228" font-family="monospace" font-size="7.5" fill="#ccd6e0">: [...]</text>
-  <text x="886" y="242" font-family="monospace" font-size="7.5" fill="#00d4ff" filter="url(#glow)">▋</text>
+<!-- OUTPUT bubble -->
+<rect x="902" y="284" width="54" height="32" rx="16" fill="#001520" stroke="#00e5ff" stroke-width="1.2" opacity="0.7"/>
+<text x="929" y="305" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#00e5ff" opacity="0.8">ANSWER</text>
 
-  <!-- Bottom accent line -->
-  <rect x="0" y="337" width="1200" height="3" fill="url(#accent2)"/>
+<!-- ═══════════════════════════════════════ -->
+<!--          TECH BADGES ROW               -->
+<!-- ═══════════════════════════════════════ -->
 
-  <!-- Author tag -->
-  <text x="600" y="325" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2a4a6a" letter-spacing="3">Muhammad Ahmad · AI Engineer Portfolio</text>
+<g font-family="'Courier New', monospace" font-size="9" letter-spacing="0.8">
+  <rect x="348" y="348" width="76" height="19" rx="9.5" fill="#00e5ff" fill-opacity="0.06" stroke="#00e5ff" stroke-width="0.7" stroke-opacity="0.45"/>
+  <text x="386" y="362" text-anchor="middle" fill="#009aaa">ChromaDB</text>
+
+  <rect x="432" y="348" width="52" height="19" rx="9.5" fill="#c060ff" fill-opacity="0.06" stroke="#c060ff" stroke-width="0.7" stroke-opacity="0.45"/>
+  <text x="458" y="362" text-anchor="middle" fill="#8833bb">BM25</text>
+
+  <rect x="492" y="348" width="74" height="19" rx="9.5" fill="#00e5ff" fill-opacity="0.06" stroke="#00e5ff" stroke-width="0.7" stroke-opacity="0.45"/>
+  <text x="529" y="362" text-anchor="middle" fill="#009aaa">LangChain</text>
+
+  <rect x="574" y="348" width="56" height="19" rx="9.5" fill="#c060ff" fill-opacity="0.06" stroke="#c060ff" stroke-width="0.7" stroke-opacity="0.45"/>
+  <text x="602" y="362" text-anchor="middle" fill="#8833bb">Ollama</text>
+
+  <rect x="638" y="348" width="56" height="19" rx="9.5" fill="#00e5ff" fill-opacity="0.06" stroke="#00e5ff" stroke-width="0.7" stroke-opacity="0.45"/>
+  <text x="666" y="362" text-anchor="middle" fill="#009aaa">FastAPI</text>
+
+  <rect x="702" y="348" width="52" height="19" rx="9.5" fill="#c060ff" fill-opacity="0.06" stroke="#c060ff" stroke-width="0.7" stroke-opacity="0.45"/>
+  <text x="728" y="362" text-anchor="middle" fill="#8833bb">Python</text>
+
+  <rect x="762" y="348" width="90" height="19" rx="9.5" fill="#00e5ff" fill-opacity="0.06" stroke="#00e5ff" stroke-width="0.7" stroke-opacity="0.45"/>
+  <text x="807" y="362" text-anchor="middle" fill="#009aaa">Sent-Transform</text>
+</g>
+
+<!-- Author -->
+<text x="600" y="398" text-anchor="middle"
+  font-family="'Courier New', Courier, monospace"
+  font-size="9.5" fill="#182838" letter-spacing="5">
+  Muhammad Ahmad  ·  AI Engineer Portfolio
+</text>
+
+</g>
 </svg>
