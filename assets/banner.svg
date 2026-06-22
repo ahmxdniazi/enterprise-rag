@@ -1,0 +1,152 @@
+<svg viewBox="0 0 1200 340" xmlns="http://www.w3.org/2000/svg" width="1200" height="340">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1a"/>
+      <stop offset="50%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#7b2fff"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7b2fff"/>
+      <stop offset="100%" style="stop-color:#00d4ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a2a3a" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="340" fill="url(#bg)"/>
+  <rect width="1200" height="340" fill="url(#grid)" opacity="0.4"/>
+
+  <!-- Ambient glow blobs -->
+  <ellipse cx="200" cy="170" rx="180" ry="120" fill="#7b2fff" opacity="0.07"/>
+  <ellipse cx="1000" cy="170" rx="180" ry="120" fill="#00d4ff" opacity="0.07"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent)"/>
+
+  <!-- Pipeline nodes — left side visual -->
+  <!-- Node: PDF -->
+  <rect x="52" y="100" width="80" height="44" rx="8" fill="#0d1b2a" stroke="#00d4ff" stroke-width="1.2" opacity="0.9"/>
+  <text x="92" y="118" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff" font-weight="bold">PDF</text>
+  <text x="92" y="133" text-anchor="middle" font-family="monospace" font-size="8" fill="#5aaabb">INGEST</text>
+
+  <!-- Arrow -->
+  <line x1="132" y1="122" x2="152" y2="122" stroke="#00d4ff" stroke-width="1.2" marker-end="url(#arr)" opacity="0.6"/>
+  <polygon points="152,118 160,122 152,126" fill="#00d4ff" opacity="0.6"/>
+
+  <!-- Node: BM25 -->
+  <rect x="160" y="90" width="72" height="28" rx="6" fill="#0d1b2a" stroke="#7b2fff" stroke-width="1.2" opacity="0.9"/>
+  <text x="196" y="109" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#a970ff">BM25</text>
+
+  <!-- Node: Vector -->
+  <rect x="160" y="126" width="72" height="28" rx="6" fill="#0d1b2a" stroke="#00d4ff" stroke-width="1.2" opacity="0.9"/>
+  <text x="196" y="145" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#00d4ff">VECTOR</text>
+
+  <!-- Arrow -->
+  <line x1="232" y1="104" x2="252" y2="118" stroke="#7b2fff" stroke-width="1" opacity="0.5"/>
+  <line x1="232" y1="140" x2="252" y2="126" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+  <polygon points="248,115 258,120 250,126" fill="#5533aa" opacity="0.6"/>
+
+  <!-- Node: RRF -->
+  <rect x="258" y="104" width="66" height="36" rx="6" fill="#0d1b2a" stroke="#a970ff" stroke-width="1.5" filter="url(#glow)" opacity="0.95"/>
+  <text x="291" y="120" text-anchor="middle" font-family="monospace" font-size="8" fill="#a970ff" font-weight="bold">RRF</text>
+  <text x="291" y="133" text-anchor="middle" font-family="monospace" font-size="7" fill="#7755cc">FUSION</text>
+
+  <!-- Arrow -->
+  <polygon points="324,118 334,122 324,126" fill="#a970ff" opacity="0.7"/>
+
+  <!-- Node: Rerank -->
+  <rect x="334" y="104" width="72" height="36" rx="6" fill="#0d1b2a" stroke="#00d4ff" stroke-width="1.5" filter="url(#glow)" opacity="0.95"/>
+  <text x="370" y="120" text-anchor="middle" font-family="monospace" font-size="8" fill="#00d4ff" font-weight="bold">RERANK</text>
+  <text x="370" y="133" text-anchor="middle" font-family="monospace" font-size="7" fill="#5aaabb">CROSS-ENC</text>
+
+  <!-- Arrow -->
+  <polygon points="406,118 416,122 406,126" fill="#00d4ff" opacity="0.7"/>
+
+  <!-- Node: LLM -->
+  <rect x="416" y="100" width="68" height="44" rx="8" fill="#0d1b2a" stroke="url(#accent)" stroke-width="2" filter="url(#glow2)" opacity="0.95"/>
+  <text x="450" y="118" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff" font-weight="bold">LLaMA</text>
+  <text x="450" y="131" text-anchor="middle" font-family="monospace" font-size="8" fill="#a970ff">3.1:8b</text>
+  <text x="450" y="142" text-anchor="middle" font-family="monospace" font-size="7" fill="#5aaabb">Ollama</text>
+
+  <!-- Bottom label -->
+  <text x="52" y="185" font-family="monospace" font-size="7.5" fill="#334455" letter-spacing="2">RETRIEVAL PIPELINE</text>
+
+  <!-- Main title area -->
+  <text x="600" y="108" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4a6a8a" letter-spacing="6" font-weight="400">PORTFOLIO PROJECT 4</text>
+
+  <!-- Main title -->
+  <text x="600" y="170" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="46" font-weight="700" fill="white" letter-spacing="-1">Enterprise RAG</text>
+
+  <!-- Gradient underline -->
+  <rect x="360" y="180" width="480" height="3" rx="2" fill="url(#accent)"/>
+
+  <!-- Subtitle -->
+  <text x="600" y="218" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#8aabcc" letter-spacing="1">Hybrid Search · Reranking · Local LLMs · FastAPI</text>
+
+  <!-- Tech badges row -->
+  <rect x="360" y="240" width="74" height="22" rx="11" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.8"/>
+  <text x="397" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff">ChromaDB</text>
+
+  <rect x="444" y="240" width="58" height="22" rx="11" fill="#7b2fff" opacity="0.12" stroke="#7b2fff" stroke-width="0.8"/>
+  <text x="473" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#a970ff">BM25</text>
+
+  <rect x="512" y="240" width="76" height="22" rx="11" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.8"/>
+  <text x="550" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff">LangChain</text>
+
+  <rect x="598" y="240" width="58" height="22" rx="11" fill="#7b2fff" opacity="0.12" stroke="#7b2fff" stroke-width="0.8"/>
+  <text x="627" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#a970ff">Ollama</text>
+
+  <rect x="666" y="240" width="62" height="22" rx="11" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.8"/>
+  <text x="697" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4ff">FastAPI</text>
+
+  <rect x="738" y="240" width="102" height="22" rx="11" fill="#7b2fff" opacity="0.12" stroke="#7b2fff" stroke-width="0.8"/>
+  <text x="789" y="255" text-anchor="middle" font-family="monospace" font-size="9" fill="#a970ff">sentence-transformers</text>
+
+  <!-- Right side: API mock -->
+  <rect x="870" y="82" width="268" height="176" rx="10" fill="#080f18" stroke="#1a2a3a" stroke-width="1.5" opacity="0.9"/>
+  <rect x="870" y="82" width="268" height="26" rx="10" fill="#0d1b2a"/>
+  <rect x="870" y="96" width="268" height="12" fill="#0d1b2a"/>
+  <circle cx="886" cy="95" r="5" fill="#ff5f57"/>
+  <circle cx="900" cy="95" r="5" fill="#febc2e"/>
+  <circle cx="914" cy="95" r="5" fill="#28c840"/>
+  <text x="1004" y="99" text-anchor="middle" font-family="monospace" font-size="8" fill="#445566">enterprise-rag API</text>
+
+  <text x="886" y="128" font-family="monospace" font-size="8.5" fill="#4a9a6a">POST</text>
+  <text x="916" y="128" font-family="monospace" font-size="8.5" fill="#ccd6e0">/query</text>
+
+  <text x="886" y="148" font-family="monospace" font-size="7.5" fill="#445566">{</text>
+  <text x="894" y="162" font-family="monospace" font-size="7.5" fill="#7b2fff">"question"</text>
+  <text x="946" y="162" font-family="monospace" font-size="7.5" fill="#ccd6e0">:</text>
+  <text x="954" y="162" font-family="monospace" font-size="7.5" fill="#4a9a6a">"What is FortiGate?"</text>
+  <text x="886" y="176" font-family="monospace" font-size="7.5" fill="#445566">}</text>
+
+  <rect x="880" y="184" width="248" height="1" fill="#1a2a3a"/>
+
+  <text x="886" y="200" font-family="monospace" font-size="7.5" fill="#445566">200 OK</text>
+  <text x="886" y="214" font-family="monospace" font-size="7.5" fill="#7b2fff">"answer"</text>
+  <text x="930" y="214" font-family="monospace" font-size="7.5" fill="#ccd6e0">: </text>
+  <text x="940" y="214" font-family="monospace" font-size="7.5" fill="#4a9a6a">"FortiGate is a..."</text>
+  <text x="886" y="228" font-family="monospace" font-size="7.5" fill="#7b2fff">"sources"</text>
+  <text x="930" y="228" font-family="monospace" font-size="7.5" fill="#ccd6e0">: [...]</text>
+  <text x="886" y="242" font-family="monospace" font-size="7.5" fill="#00d4ff" filter="url(#glow)">▋</text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="337" width="1200" height="3" fill="url(#accent2)"/>
+
+  <!-- Author tag -->
+  <text x="600" y="325" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2a4a6a" letter-spacing="3">Muhammad Ahmad · AI Engineer Portfolio</text>
+</svg>
